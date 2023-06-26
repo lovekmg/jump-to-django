@@ -13,7 +13,7 @@ def index(request):
     question_list = Question.objects.order_by('-create_date')
     paginator = Paginator(question_list, 10)        # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
-    context = {'question_list': page_obj}
+    context = { 'question_list': page_obj, 'start_index': page_obj.start_index() }
     return render(request, 'pybo/question_list.html', context)
 
 def detail(request, question_id):
