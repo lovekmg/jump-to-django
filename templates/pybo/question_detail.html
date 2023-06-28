@@ -48,6 +48,8 @@
                 {% if request.user == answer.author %}
                 <a href="{% url 'pybo:answer_modify' answer.id %}"
                    class="btn btn-sm btn-outline-secondary">수정</a>
+                <a href="javascript:void(0);" data-uri="{% url 'pybo:answer_delete' answer.id %}"
+                   class="delete btn btn-sm btn-outline-secondary">삭제</a>
                 {% endif %}
             </div>
         </div>
